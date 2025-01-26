@@ -2,9 +2,28 @@ name: My First Workflow
 on: 
   push:
     branches:
-    - main
+      - main
   workflow_dispatch:
-    
+    inputs:
+      homedrive:
+        description: 'the home directory'
+        required: true
+      logLevel:
+        description: 'Log level'
+        default: 'warning'
+        type: choice
+        options:
+          - info
+          - warning
+          - debug
+      tag:
+        description: "Apply tag after successful run"
+        required: true
+        type: boolean
+      environment:
+        description: 'Environment to run test against'
+        type: environment
+        required: true
 
 jobs: 
   MyFirstJob:
