@@ -23,7 +23,7 @@ on:
       environment:
         description: 'Environment to run test against'
         type: environment
-        required: true
+        required: false
 
 jobs: 
   MyFirstJob:
